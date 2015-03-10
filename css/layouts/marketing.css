@@ -37,6 +37,10 @@ label {
     padding: 1em;
 }
 
+.logo {
+    img
+}
+
 .l-box-lrg {
     padding: 2em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
