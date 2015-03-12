@@ -1044,8 +1044,8 @@
 /* Banner */
 
 	#banner {
+		height: 100%;
 		background-image: url(../images/dark_tint.png), url(../images/bokeh_car_lights_bg.jpg);
-		background-position: center center;
 		background-size: cover;
 		color: #ffffff;
 		padding: 14em 0em 14em;
@@ -1075,7 +1075,7 @@
 		padding: 6em 0em 4em;
 		/* Style 1 Wrapper */
 		/* Style 2 Wrapper */
-		/* Style 3 Wrapper */
+		/* Style 3 Wrapper
 	}
 
 		.wrapper.style1 {
@@ -1145,7 +1145,7 @@
 				color: #444;
 			}
 
-/* Footer */
+/* Footer
 
 	#footer {
 		background: #383b43;
