@@ -952,25 +952,14 @@
 		width: 100%;
 		z-index: 10000;
 	}
-	#logo {
-		padding-top: 15px;
-		background-color: #383b43;
-		color: #ffffff;
-		cursor: default;
-		font-size: 1.1em;
-		height: 6em;
-		line-height: 6em;
-		width: 100%;
-		z-index: 10000;
-	}
 
 		#header h1 {
+            padding-top: 10px;
 			color: #ffffff;
 			height: inherit;
-			left: 3em;
+			left: 2em;
 			line-height: inherit;
 			margin: 0;
-			padding: 0;
 			position: absolute;
 		}
 
@@ -1201,6 +1190,9 @@
 			width: 4em;
 			cursor: pointer;
 		}
+
+
+
 
 /* Grid Demo */
 
