@@ -23,10 +23,9 @@ if($query_string == "action=submit"){
         //Connect to MySQL Database.
         $db = new mysqli_connect($SQL_Host, $SQL_Username, $SQL_Password, $SQL_Database);
         //Insert values.
-        mysqli_query($db, "INSERT INTO `book` (`ID`, `title`, `edition`, `author`, `genre`, `category`, `isbn`, `publisher`, `year_published`, `amazon_href`, `ebook_href`, `location`, `pages`, `cover`) VALUES ('$title', '$edition', '$author', '$genre', '$category', '$isbn', '$publisher', '$year_published', '$amazon', '$ebook', '$loc', '$pagenum', '$cover')");
-    
-    
+        mysqli_query($db, "INSERT INTO `book` (`ID`, `title`, `edition`, `author`, `genre`, `category`, `isbn`, `publisher`, `year_published`, `amazon_href`, `ebook_href`, `location`, `pages`, `cover`) VALUES ('$title', '$edition', '$author', '$genre', '$category', '$isbn', '$publisher', '$year_published', '$amazon', '$ebook', '$loc', '$pagenum', '$cover')"); 
     }
+mysql_close;
 }
 ?>
 <form action="input.php?action=submit" method="post" name="database" id="database">
