@@ -1,17 +1,20 @@
 <?php 
-session_start;
-if($_SESSION['loggedin']){
-    echo('<script> window.open("input.php", _self)');
+session_start();
+if(isset($_SESSION['loggedin'])){
+    header('Location: input.php');
 }
+
+$wrong_pass = false;
 $query_string = $_SERVER['QUERY_STRING'];
-if($query == "action=login"){
+
+//This is really bad and hacky, will rewrite later
+if(@($_GET['action']) == "login"){
     if($_POST['pass'] == "ftlb_login"){
-        $_SESSION['loggedin'] == TRUE;
-        echo('<script> window.open("input.php", _self) </script>');
+        $_SESSION['loggedin'] = TRUE;
+        header('Location: input.php');
     }
     else{
-        echo('<script> window.open("input_login.php", _self) </script>');
-        $_SESSION['wrongpass'] = true;
+        $wrong_pass = true;
     }
 }
 
@@ -19,10 +22,9 @@ if($query == "action=login"){
 ?>
 <form action="input_login.php?action=login" method="post" name="login" id="login">
     <?php 
-    if($_SESSION['wrongpass']){
+    if($wrong_pass){
         echo '<p>Wrong password. Please ask a teacher for the correct one and try again<p>';
-        $_SESSION['wrongpass'] = false;
-}
+    }
     ?>
     <p>Login Pass:</p>
     <input type="password" name="pass" id="pass"><br>
