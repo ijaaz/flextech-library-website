@@ -54,9 +54,6 @@ if(@($_GET['action']) == 'submit'){
         //Connect to MySQL Database.
         $db = new mysqli_connect($SQL_Host, $SQL_Username, $SQL_Password, $SQL_Database);
         //Insert values.
-<<<<<<< HEAD
-        mysqli_query($db, "INSERT INTO `book` (`ID`, `title`, `edition`, `author`, `genre`, `category`, `isbn`, `publisher`, `year_published`, `amazon_href`, `ebook_href`, `location`, `pages`, `cover`) VALUES ('$title', '$edition', '$author', '$genre', '$category', '$isbn', '$publisher', '$year_published', '$amazon', '$ebook', '$loc', '$pagenum', '$cover')"); 
-=======
         $stmt = mysqli_prepare($db, 'INSERT INTO `book` VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?');
 
         foreach($binds as $name => $value) {
@@ -97,7 +94,7 @@ mysql_close;
     <p>Location (Either PDF link, or room that it's in.):</p>
     <input type="text" name="location" id="location"><br>
     <p>Link to image cover: (Should be a .jpg, .png, or .gif)</p>
-    <input type="text" name="coverlink" id="coverlink"><br>
+    <input type="text" name="cover" id="cover"><br>
     <br>
     <br>
     <input type="submit" value="Submit" autofocus>
