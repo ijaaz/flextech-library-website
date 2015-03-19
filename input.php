@@ -1,34 +1,70 @@
 <!--Note: This section is for the English class to input books/others. There will be one username and password to have access to this resource-->
 <?php 
-session_start;
-if($_SESSION['loggedin'] == FALSE){
-    echo('<script> window.open("input_login.php", _self)');
+include_once('database-info.php');
+
+function dbtype($var) {
+    switch(gettype($var)) {
+        case 'string':
+            return 's';
+            break;
+
+        case 'integer':
+        case 'double':
+        case 'float':
+            return 'i';
+            break;
+    }
 }
-$query_string = $_SERVER('QUERY_STRING');
-if($query_string == "action=submit"){
+
+//Temporary shortcut(s)
+function clean($var) {
+    return htmlentities(mysqli_escape_string($var));
+}
+
+function post($name) {
+    if(isset($_POST[$name])) {
+        return clean($_POST[$name]);
+    }
+
+    return null;
+}
+
+session_start();
+if(!isset($_SESSION['loggedin'])){
+    header('Location: input_login.php');
+}
+
+if(@($_GET['action']) == 'submit'){
     //Just double checking :P
-    if($_SESSION['loggedin']){
-        $title = mysqli_escape_string($_POST['title']); 
-        $edition = mysqli_escape_string($_POST['edition']);
-        $author = mysqli_escape_string($_POST['author']);
-        $genre = mysqli_escape_string($_POST['category']);
-        $isbn = mysqli_escape_string($_POST['isbn']);
-        $publisher = mysqli_escape_string($_POST['publisher']);
-        $year_published = mysqli_escape_string($_POST['publishyear']);
-        $amazon = mysqli_escape_string($_POST['amazon']);
-        $pagenum = mysqli_escape_string($_POST['pagenum']);
-        $loc = mysqli_escape_string($_POST['location']);
-        $cover = mysqli_escape_string($_POST['cover']);
-        //End of SQL variable
+    if($_SESSION['loggedin'] && $_POST) {
+        //This is really hacky, will rewrite later
+        $binds = [
+            'title' => post('title'),
+            'edition' => post('edition'),
+            'author' => post('author'),
+            'genre' => post('genre'),
+            'isbn' => str_replace('-', '', post('isbn')),
+            'publisher' => post('publisher'),
+            'year_published' => post('year_published'),
+            'amazon' => post('amazon'),
+            'pagenum' => post('pagenum'),
+            'location' => post('location'),
+            'cover' => post('cover')
+        ];
         //Connect to MySQL Database.
         $db = new mysqli_connect($SQL_Host, $SQL_Username, $SQL_Password, $SQL_Database);
         //Insert values.
-        mysqli_query($db, "INSERT INTO `book` (`ID`, `title`, `edition`, `author`, `genre`, `category`, `isbn`, `publisher`, `year_published`, `amazon_href`, `ebook_href`, `location`, `pages`, `cover`) VALUES ('$title', '$edition', '$author', '$genre', '$category', '$isbn', '$publisher', '$year_published', '$amazon', '$ebook', '$loc', '$pagenum', '$cover')");
+        $stmt = mysqli_prepare($db, 'INSERT INTO `book` VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?');
+
+        foreach($binds as $name => $value) {
+            mysqli_stmt_bind_param($stmt, dbtype($value), $value);
+        }
     
-    
+        mysqli_stmt_execute($stmt);
     }
 }
 ?>
+
 <form action="input.php?action=submit" method="post" name="database" id="database">
     <br>
     <p>Title:</p>
@@ -41,7 +77,7 @@ if($query_string == "action=submit"){
     <input type="text" name="genre" id="genre"><br>
     <p>Category:</p>
     <input type="text" name="category" id="category"><br>
-    <p>ISBN(Optional, Please remove all '-'s):</p>
+    <p>ISBN(Optional):</p>
     <input type="text" name="ISBN" id="isbn"><br>
     <p>Publisher:</p>
     <input type="text" name="publisher" id="publisher"><br>
