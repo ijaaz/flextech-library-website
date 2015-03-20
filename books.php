@@ -25,7 +25,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html"><img src="images/dogtookmyhands.png" width="170px" height="70px"/></a></h1>
+        <h1><a href="index.html"><img src="images/flextech-logo.png" width="170px" height="70px"/></a></h1>
 
         <nav id="nav">
             <ul>
