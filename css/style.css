@@ -70,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #ffffff;
+    color: #808080;
     font-weight: 700;
     line-height: 1em;
     margin: 0 0 1em 0;
@@ -596,6 +596,7 @@ ol {
     list-style: decimal;
     margin: 0 0 2em 0;
     padding-left: 1.25em;
+    text-align: left;
 }
 
 ol li {
