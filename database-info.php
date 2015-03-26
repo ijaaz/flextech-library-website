@@ -3,5 +3,7 @@
 $SQL_Username = "";
 $SQL_Password = "";
 $SQL_Database = "";
+
+$site_pass = "";
 //Not going to be including Table, as it varies from section to section.
 ?>
