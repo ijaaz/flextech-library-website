@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="css/skel.css" />
     <link rel="stylesheet" href="css/browse_style.css" />
     <link rel="stylesheet" href="css/style-xlarge.css" />
+    <link rel="stylesheet" href="styles/shCoreDefault.css" />
+    <script type="text/javascript" src="scripts/shCore.js"></script>
+    <script type="text/javascript" src="scripts/shBrushJava.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+
 </head>
 
 <body>
@@ -46,6 +53,22 @@
     <p>Now we are ready to begin writing our code. To begin, you must open the Arduino Software. Once done, you can review and rewrite the below code into the Arduino Software.</p>
     <p><font size="1">Note that the '//' text denotes a comment. A comment is a string of text that is not read or executed by the program. This is useful for telling a reader what a line of code does, or keeping old code that you don't want to delete yet.</font>
     </p>
+
+    <pre class="brush: java;">
+    int led = 13; // This makes a variable "led" that is equal to 13.
+
+    void setup() { // Setup will run once at the beginning of your program, and never again.
+        pinMode(led, OUTPUT); // This will designate pin 13 (the variable 'led' = 13, as shown above) on your Arduino board as an output.
+        digitalWrite(led, LOW); // This will turn off power for pin 13.
+    }
+
+    void loop() { // Loop will run over and over. As soon as it finishes, it starts over again.
+        digitalWrite(led, HIGH); // This turn on power for pin 13.
+        delay(500); // This will delay the next function for 500 milliseconds, or 1/2 of a second.
+        digitalWrite(led, LOW);
+        delay(500);
+    }
+    </pre>
 
 
 </body>
