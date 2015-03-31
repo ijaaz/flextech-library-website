@@ -30,11 +30,11 @@ function post($name) {
 }
 
 session_start();
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION['loggedin'])) {
     header('Location: input_login.php');
 }
 
-if(@($_GET['action']) == 'submit'){
+if(@($_GET['action']) == 'submit') {
     //Just double checking :P
     if($_SESSION['loggedin'] && $_POST) {
         //This is really hacky, will rewrite later
@@ -54,7 +54,7 @@ if(@($_GET['action']) == 'submit'){
         //Connect to MySQL Database.
         $db = new mysqli_connect($SQL_Host, $SQL_Username, $SQL_Password, $SQL_Database);
         //Insert values.
-        $stmt = mysqli_prepare($db, 'INSERT INTO `book` VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?');
+        $stmt = mysqli_prepare($db, 'INSERT INTO `book` VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
         foreach($binds as $name => $value) {
             mysqli_stmt_bind_param($stmt, dbtype($value), $value);

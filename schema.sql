@@ -40,24 +40,3 @@ CREATE TABLE `book` (
     PRIMARY KEY(`id`)
 ) ENGINE=InnoDB;
 
-
---
---   Table: event
---
---   id - The row id
---   title - The title of the event
---   startdate - When the event is starting
---   enddate - When the event is ending
---   location - Where the even is taking place (Should be required?)
---   description - A descript ofthe event
---
-
-CREATE TABLE `event` (
-    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-    `title` VARCHAR(80) NOT NULL,
-    `startdate` VARCHAR(30) NOT NULL,
-    `enddate` VARCHAR(30) NOT NULL,
-    `location` VARCHAR(100) DEFAULT NULL,
-    `description` VARCHAR(300) NOT NULL,
-    PRIMARY KEY(`id`)
-) ENGINE=InnoDB;
