@@ -6,7 +6,14 @@
 //Make boxes clickable.
 //Other fun stuff, like putting things on grids. Which is fun. *sighs*
 session_start; //I love this. Don't hate. It can be useful later <3
+include("database-info.php");
 
+$conn = new mysqli($SQL_Host,$SQL_Username,$SQL_Password,$SQL_Database);
+//Checking for connection errors
+if($conn-> connect_errno){
+	die("SQL Database Connection Failed: " . $conn->connect_error);
+}
+//I'm eventually going to make a select statement, but I'll have to look at the SQL configuration. Yup.
 ?>
 
 <!DOCTYPE html>
