@@ -1,3 +1,14 @@
+<?php
+//Todo List:
+//Pull books from database
+//Apply template to pulled data
+//Arrange data in a neat format
+//Make boxes clickable.
+//Other fun stuff, like putting things on grids. Which is fun. *sighs*
+session_start; //I love this. Don't hate. It can be useful later <3
+
+?>
+
 <!DOCTYPE html>
 <!--
 	Transit by TEMPLATED
