@@ -10,20 +10,17 @@
     <script src="js/skel.min.js"></script>
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
-    <link rel="stylesheet" href="styles/shCoreDefault.css" />
-    <script type="text/javascript" src="scripts/shCore.js"></script>
-    <script type="text/javascript" src="scripts/shBrushJava.js"></script>
+    <link rel="stylesheet" href="css/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="js/scripts/shCore.js"></script>
+    <script type="text/javascript" src="js/scripts/shBrushJava.js"></script>
     <script type="text/javascript">
         SyntaxHighlighter.all();
     </script>
-
 </head>
 
 <body>
-
     <header id="header">
         <h1><a href="index.html"><img src="images/flextech-logo.png" width="170px" height="70px"/></a></h1>
-
         <nav id="nav">
             <ul>
                 <li><a href="index.html"><font color="#333">Home</font></a>
@@ -33,19 +30,13 @@
             </ul>
         </nav>
     </header>
-
     <section id="main" class="wrapper">
-
         <div class="container">
-
             <header class="major">
                 <h2>Arduino Tutorial 1: Introduction to Arduino</h2>
             </header>
-
             <p>Welcome to the FlexTech Library's introductory Arduino tutorial. The intention of this tutorial is to familiarize students with the basics of an Arduino Uno Microcontroller.</p>
-
             <h4>Required Materials:</h4>
-
             <ul>
                 <li>Arduino Uno Microcontroller</li>
                 <li>USB A/B Cable</li>
@@ -53,24 +44,17 @@
                 <li><a href="http://arduino.cc/en/Main/Software" target="blank">Arduino Software</a>
                 </li>
             </ul>
-
             <h4>Hardware</h4>
-
-            <p>Let's take a minute to get ourselves familiar with the hardware. The Arduino Uno Microcontroller is a small function machine that is designed to retain and execute a code, and read and write to and from different inputs and outputs. The physical board has many pins on it, where you can plug in either inputs or outputs for power or electrical signals. It also has a USB B port, for use with a computer, and a power port, which is used when you need to power the arduino without a computer. The Arduino also has a 'reset' button, which is located right next to the large USB B port. This button is used to stop and restart the code. In this tutorial, we will be focusing on the USB B port, the pin labeled '13', and the yellow LED associated with pin 13.</p>
+            <p>Let's take a minute to get ourselves familiar with the hardware. The Arduino Uno Microcontroller is a small function machine that is designed to retain and execute a code, and read and write to and from different inputs and outputs. The physical board has many pins on it, where you can plug in either inputs or outputs for power or electrical signals. It also has a USB B port, for use with a computer, and a power port, which is used when you need to power the arduino without a computer. The Arduino also has a 'reset' button, which is located right next to the large USB B port. This button is used to stop and restart the code. In this tutorial, we will be focusing on the USB B port, the pin labeled '13', and the yellow LED associated with pin 13 (which is integrated into the board).</p>
             <p>The cable we will be using to connect our Arduino to the computer is a USB A/B cable. This cable has a USB A connector (the flat and rectangular plug) and a USB B connector (the taller and more square plug). The USB B connector goes into the Arduino, while the USB A connector goes into the computer.</p>
-
             <h4>Software*</h4>
-
             <p>To make a program in Arduino, we have to have the Arduino Software, which can be downloaded <a href="http://arduino.cc/en/Main/Software" target="blank">here</a> for free. Once downloaded, move the Arduino application into your 'Applications' folder. Launch the Arduino program by double-clicking it. Once the program is open, you can save your sketch by pressing the 'command' and 's' keys. The sketch should have then saved to a folder named 'Arduino' in your 'Documents' folder.</p>
             <p><font size="1">*Note, all software guides are primarily for Mac OSX. A Windows version will come soon.</font>
             </p>
-
             <h3>Writing the Code</h3>
-
             <p>Now we are ready to start writing our code. To begin, you must open the Arduino Software. Once done, you can review and copy the below code into the Arduino Software.</p>
             <p><font size="1">Note that the '//' text denotes a comment. A comment is a string of text that is not read or executed by the program. This is useful for telling a reader what a line of code does, or keeping old code that you don't want to delete yet.</font>
             </p>
-
             <pre class="brush: java;">
     int led = 13; // This makes a variable "led" that is equal to 13.
 
@@ -87,14 +71,10 @@
     }
     </pre>
             <p>Now verfiy that your code is working properly by pressing the checkmark in the top left corner of the Arduino Software. Your sketch will be checked for errors and then compiled. If your coding environment gives any errors, make sure that your code is the same as the code in this guide. Make sure that you aren't missing any curly braces or semicolons.</p>
-
             <h3>Uploading the Code</h3>
-
-            <p>Once our code has been written, we can upload our code to the Arduino board. First, plug the USB A/B cable into both your computer and the Arduino. Now, go to the 'Tools' menu. From there, click on the 'Board' menu, and make sure that the 'Arduino Uno' option is checked. Also in the 'Tools' menu, there is a menu labeled 'Port'. Make sure that the selected item is something like '[adding this when access to an Arduino is available]'. Once done, we can upload our code to the Arduino board. This can be done by pressing the rightward-pointing arrow, located next to the verfiy button. If this fails, be sure that the Arduino Uno is selected in both the 'Board' and 'Port' menus.</p>
-
+            <p>Once our code has been written, we can upload our code to the Arduino board. First, plug the USB A/B cable into both your computer and the Arduino. Now, go to the 'Tools' menu. From there, click on the 'Board' menu, and make sure that the 'Arduino Uno' option is checked. Also in the 'Tools' menu, there is a menu labeled 'Port'. Make sure that the selected item is something like '[adding this when access to an Arduino is available]'. Once done, we can upload our code to the Arduino board. This can be done by pressing the rightward-pointing arrow, located next to the verfiy button. If this fails, be sure that the Arduino Uno is selected in both the 'Board' and 'Port' menus, and that all of your code is working properly.</p>
             <h3>Running the Code</h3>
-
-            <p>Now we can observe our code in action. For this tutorial, we used pin 13, which is connected to one of the LEDs on the Arduino board. You should see the yellow LED next to pin 13 blinking on and off in half-second increments. You can change how quickly it blinks by changing the number in 'delay()' in the code. Remember that this number is going to be read as milliseconds (1000 milliseconds is equal to one second).</p>
+            <p>Now we can observe our code in action. You should see the yellow LED next to pin 13 blinking on and off in half-second increments. Now that it's working, experiment with your code; for instance, you can change how quickly the LED blinks by changing the number in 'delay()' in the code. Now that you have completed Tutorial 1, you can move on to Tutorial 2 (coming soon).</p>
         </div>
     </section>
 </body>
