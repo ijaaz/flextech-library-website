@@ -956,6 +956,11 @@ body.landing #header nav a {
     color: rgba(255, 255, 255, 0.5);
 }
 
+#logo {
+    width: 170px;
+    height: 70px;
+}
+
 #header {
     background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
