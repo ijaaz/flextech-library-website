@@ -39,7 +39,7 @@ if($conn-> connect_errno){
     <link rel="stylesheet" href="css/style-xlarge.css" />
 </head>
 
-<body class="landing">
+<body>
 
     <!-- Header -->
     <header id="header">
@@ -47,9 +47,9 @@ if($conn-> connect_errno){
 
         <nav id="nav">
             <ul>
-                <li><a href="index.html"><font color="#333">Home</font></a>
+                <li><a href="index.html">Home</a>
                 </li>
-                <li><a href="browse.html"><font color="#333">Browse</font></a>
+                <li><a href="browse.html">Browse</a>
                 </li>
             </ul>
         </nav>

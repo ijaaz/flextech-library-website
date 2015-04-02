@@ -1013,14 +1013,14 @@ body.landing #header nav a {
     -o-transition: color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
-    color: #cdced0;
+    color: #aaa;
     display: inline-block;
     text-decoration: none;
 }
 
 #header nav > ul > li a:active,
 #header nav > ul > li a:hover {
-    color: #ffffff;
+    color: #333;
 }
 
 #header nav > ul > li:first-child {
