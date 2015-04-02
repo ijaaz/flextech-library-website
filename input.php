@@ -61,9 +61,8 @@ if(@($_GET['action']) == 'submit') {
         }
     
         mysqli_stmt_execute($stmt);
->>>>>>> origin/master
+        mysqli_close($db);
     }
-mysql_close;
 }
 ?>
 
