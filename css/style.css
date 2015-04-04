@@ -1059,10 +1059,12 @@ body.landing #header nav a {
     color: #ffffff;
     padding: 14em 0em 100%;
     text-align: center;
+
     #banner:last-child {
         margin-bottom: 0;
     }
-    #banner h2 {
+}
+  #banner h2 {
         color: #ffffff;
         font-size: 4em;
         line-height: 1.25em;
