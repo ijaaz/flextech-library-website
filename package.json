@@ -1,0 +1,29 @@
+{
+  "name": "flextech-library-website",
+  "version": "1.0.0",
+  "description": "Our Flextech library website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtello/flextech-library-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtello/flextech-library-website/issues"
+  },
+  "homepage": "https://github.com/mtello/flextech-library-website",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-jade": "^0.14.1",
+    "grunt-contrib-stylus": "^0.21.0",
+    "grunt-contrib-uglify": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express": "^1.4.1"
+  }
+}
