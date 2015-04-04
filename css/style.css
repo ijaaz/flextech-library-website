@@ -943,6 +943,11 @@ input[type="button"]:disabled,
     cursor: default;
     opacity: 0.25;
 }
+
+.landing {
+    background: url(../images/dark_tint.png), url(../images/bokeh_car_lights_bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 /* Header */
 
 body.landing #header {
@@ -1053,11 +1058,8 @@ body.landing #header nav a {
 /* Banner */
 
 #banner {
-    height: 100%;
-    background-size: cover;
-    background-image: url(../images/dark_tint.png), url(../images/bokeh_car_lights_bg.jpg);
     color: #ffffff;
-    padding: 14em 0em 100%;
+    padding: 14em 0em 0;
     text-align: center;
 
     #banner:last-child {
